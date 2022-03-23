@@ -24,6 +24,15 @@ module.exports = {
         'bn-gray-800': '#2F2F30',
         'bn-gray-900': '#191919',
       },
+      fontSize: {
+        'heading': '64px',
+        'h3': '24px',
+        'h4': '16px',
+        'p16': '16px',
+        'p14': '14px',
+        'p12': '12px',
+        'l12': '12px',
+      }
     },
   },
   plugins: [],
