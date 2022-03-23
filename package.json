@@ -7,24 +7,35 @@
     "preview": "vite preview --port 5050",
     "test:unit": "vitest --environment jsdom",
     "test:e2e": "start-server-and-test preview http://127.0.0.1:5050/ 'cypress open'",
-    "test:e2e:ci": "start-server-and-test preview http://127.0.0.1:5050/ 'cypress run'"
+    "test:e2e:ci": "start-server-and-test preview http://127.0.0.1:5050/ 'cypress run'",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@headlessui/vue": "^1.4.3",
     "pinia": "^2.0.9",
+    "sass": "^1.49.9",
+    "scss": "^0.2.4",
     "vue": "^3.2.27",
     "vue-router": "^4.0.12"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@storybook/addon-actions": "^6.4.19",
+    "@storybook/addon-essentials": "^6.4.19",
+    "@storybook/addon-links": "^6.4.19",
+    "@storybook/vue3": "^6.4.19",
     "@vitejs/plugin-vue": "^2.0.1",
     "@vue/test-utils": "^2.0.0-rc.18",
     "autoprefixer": "^10.4.2",
+    "babel-loader": "^8.2.4",
     "cypress": "^9.3.1",
     "jsdom": "^19.0.0",
     "postcss": "^8.4.5",
     "start-server-and-test": "^1.14.0",
     "tailwindcss": "^3.0.18",
     "vite": "^2.7.13",
-    "vitest": "^0.1.23"
+    "vitest": "^0.1.23",
+    "vue-loader": "^16.8.3"
   }
 }
