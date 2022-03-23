@@ -40,3 +40,5 @@ npm run test:unit
 npm run build
 npm run test:e2e # or `npm run test:e2e:ci` for headless testing
 ```
+# Starts Storybook in development mode
+npm run storybook
