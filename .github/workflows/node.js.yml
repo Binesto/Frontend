@@ -28,4 +28,4 @@ jobs:
         cache: 'npm'
     - run: npm install
     - run: npm run build
-    - run: cp -r dist/* /var/www/html/app.dev.binesto.com/
+    - run: sudo cp -r dist/* /var/www/html/app.dev.binesto.com/
