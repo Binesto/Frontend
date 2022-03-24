@@ -5,6 +5,10 @@
     @apply font-['Manrope',sans-serif]
 }
 
+body{
+    @apply text-white
+}
+
 ::selection{
     @apply bg-primary/50 text-white
 }
