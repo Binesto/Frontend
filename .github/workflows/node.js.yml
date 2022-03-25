@@ -37,7 +37,7 @@ jobs:
         run: npm run build
 
       - name: Deploy to Nginx
-        run: sudo cp -r dist/* /var/www/html/app.dev.binesto.com/
+        run: cp -r dist/* /var/www/html/app.dev.binesto.com/
     
     
     
