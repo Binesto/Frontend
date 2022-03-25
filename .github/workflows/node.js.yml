@@ -36,6 +36,6 @@ jobs:
         run: npm run build-storybook
         
       - name: Deploy Storybook to Nginx
-        run: cp -r storbook-static/* /var/www/html/storybook.binesto.com/
+        run: cp -r storybook-static/* /var/www/html/storybook.binesto.com/
     
     
