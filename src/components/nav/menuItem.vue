@@ -1,10 +1,9 @@
 <template>
-    <button class="item">
+    <button class="item" :class="props.active == active ? 'active' : ''">
         <div>
             <slot></slot>
         </div>
         <TransitionRoot
-            appear
             :show="props.notification"
             enter="transition-all transform duration-150"
             enter-from="opacity-0 scale-75"
@@ -20,16 +19,14 @@
 
 <script setup>
 import { TransitionRoot } from '@headlessui/vue'
-import { ref } from 'vue'
+import { ref, inject } from 'vue'
 
 const props = defineProps({
-    notification: Boolean
+    notification: Boolean,
+    active: String
 });
 
-
-// if (props.notification) {
-//     console.log(props.notification)
-// }
+const active = inject('navActive')
 
 </script>
 
@@ -48,5 +45,8 @@ const props = defineProps({
     .notification {
         @apply bg-primary text-white px-2 py-1 text-xs rounded-md font-medium;
     }
+}
+.item.active {
+    @apply bg-primary/5 text-primary focus:ring-0 focus:ring-transparent cursor-pointer;
 }
 </style>

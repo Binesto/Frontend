@@ -1,5 +1,5 @@
 <template>
-  <div class="app">
+  <div class="application">
     <Nav></Nav>
     <div class="wrap"></div>
   </div>
@@ -10,7 +10,7 @@ import Nav from './components/nav/nav.vue'
 </script>
 
 <style lang="scss" scoped>
-.app {
+.application {
   @apply w-full h-screen flex bg-dark-100 p-8;
   .wrap {
     @apply w-full rounded-3xl bg-dark-200;
