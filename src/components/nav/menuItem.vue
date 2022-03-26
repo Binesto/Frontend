@@ -1,5 +1,5 @@
 <template>
-    <button class="item" :class="props.active == active ? 'active' : ''">
+    <button @click="routeCheck" class="item" :class="props.active == route.name ? 'active' : ''">
         <div>
             <slot></slot>
         </div>
@@ -19,7 +19,8 @@
 
 <script setup>
 import { TransitionRoot } from '@headlessui/vue'
-import { ref, inject } from 'vue'
+import { ref, inject, onMounted } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 
 const props = defineProps({
     notification: Boolean,
@@ -27,6 +28,14 @@ const props = defineProps({
 });
 
 const active = inject('navActive')
+
+// router
+const router = useRouter();
+const route = useRoute();
+
+const routeCheck = () => {
+    router.push(props.active === 'home' ? '/' : props.active)
+}
 
 </script>
 
@@ -47,6 +56,6 @@ const active = inject('navActive')
     }
 }
 .item.active {
-    @apply bg-primary/5 text-primary focus:ring-0 focus:ring-transparent cursor-pointer;
+    @apply bg-primary/10 text-primary focus:ring-0 focus:ring-transparent cursor-pointer;
 }
 </style>

@@ -1,7 +1,9 @@
 <template>
   <div class="application">
     <Nav></Nav>
-    <div class="wrap"></div>
+    <div class="wrap">
+        <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -13,7 +15,7 @@ import Nav from './components/nav/nav.vue'
 .application {
   @apply w-full h-screen flex bg-dark-100 p-8;
   .wrap {
-    @apply w-full rounded-3xl bg-dark-200;
+    @apply w-full rounded-3xl bg-dark-200 p-8;
   }
 }
 </style>

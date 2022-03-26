@@ -5,10 +5,7 @@
             <MenuButton class="account">
                 <div class="account-wrap">
                     <div>
-                        <img
-                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                            alt="avatar"
-                        />
+                        <img src="https://avatars.githubusercontent.com/u/47571500?v=4" />
                     </div>
                     <div class="account-detail">
                         <p class="account-name">Fatih Yıldız</p>
@@ -45,15 +42,44 @@
             <MenuItems class="menuItems">
                 <div class="divide">
                     <MenuItem class="menuItem">
-                        <button>Duplicate</button>
+                        <button>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 mr-2"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                                />
+                            </svg>
+                            Değişiklik Günlüğü
+                        </button>
                     </MenuItem>
                 </div>
                 <div class="divide">
                     <MenuItem class="menuItem">
-                        <button>Duplicate</button>
-                    </MenuItem>
-                    <MenuItem class="menuItem">
-                        <button>Duplicate</button>
+                        <button>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5 mr-2"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+                                />
+                            </svg>
+                            Çıkış yap
+                        </button>
                     </MenuItem>
                 </div>
             </MenuItems>
@@ -83,7 +109,7 @@ import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
             }
         }
     }
-    svg{
+    svg {
         @apply w-5 h-5;
     }
 }
@@ -92,7 +118,7 @@ import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
     .divide {
         @apply p-2;
         button {
-            @apply hover:bg-primary/80 text-bn-gray-500 hover:text-white flex rounded-md items-center w-full px-2 py-2 text-sm;
+            @apply hover:bg-primary/80 text-bn-gray-500 hover:text-white flex rounded-md items-center w-full px-2 py-2 text-xs font-medium;
         }
     }
 }

@@ -5,7 +5,7 @@
             <div class="menu">
                 <div class="topMenu">
                     <div class="other">
-                        <MenuItem>
+                        <MenuItem active>
                             <svg
                                 viewBox="0 0 17 17"
                                 fill="none"
@@ -21,7 +21,7 @@
                             </svg>
                             <span>Ara</span>
                         </MenuItem>
-                        <MenuItem
+                        <MenuItem active
                             @click="notification = !notification"
                             :notification="notification"
                         >
@@ -97,7 +97,7 @@
                 </div>
                 <div class="bottomMenu">
                     <div class="general">
-                        <MenuItem>
+                        <MenuItem active>
                             <svg
                                 viewBox="0 0 17 17"
                                 fill="none"
@@ -166,6 +166,9 @@ const notification = ref(true);
 //Navigation Configure
 const navActive = ref('home');
 provide('navActive', navActive.value)
+
+
+
 
 </script>
 
