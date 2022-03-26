@@ -17,6 +17,16 @@ const router = createRouter({
       name: 'wallet',
       component: () => import('@/views/wallet.vue')
     },
+    {
+      path: '/notification',
+      name: 'notification',
+      component: () => import('@/views/notification.vue')
+    },
+    {
+      path: '/settings',
+      name: 'settings',
+      component: () => import('@/views/settings.vue')
+    },
   ]
 })
 

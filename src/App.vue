@@ -1,14 +1,16 @@
 <template>
+  <Search />
   <div class="application">
-    <Nav></Nav>
+    <Nav />
     <div class="wrap">
-        <router-view></router-view>
+      <router-view></router-view>
     </div>
   </div>
 </template>
 
 <script setup>
-import Nav from './components/nav/nav.vue'
+import Nav from '@/components/nav/nav.vue'
+import Search from '@/components/search.vue'
 </script>
 
 <style lang="scss" scoped>
