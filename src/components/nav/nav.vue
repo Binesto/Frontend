@@ -5,7 +5,7 @@
             <div class="menu">
                 <div class="topMenu">
                     <div class="other">
-                        <MenuItem active>
+                        <MenuItem @click="search" active>
                             <svg
                                 viewBox="0 0 17 17"
                                 fill="none"
@@ -148,7 +148,7 @@ import { ref, provide, watch } from 'vue';
 import Logo from './logo.vue'
 import MenuItem from './menuItem.vue'
 import Account from './account.vue'
-
+import { useStateStore } from '../../stores/store.js'
 // Logo Configure
 const logo = ref({
     height: '38',
@@ -165,7 +165,10 @@ const navActive = ref('home');
 provide('navActive', navActive.value)
 
 
+//Search
+const stateStore = useStateStore();
 
+const search = () => {stateStore.setSearch()};
 
 </script>
 

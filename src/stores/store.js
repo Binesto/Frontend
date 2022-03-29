@@ -1,15 +1,16 @@
 import { defineStore } from 'pinia'
 
 export const useStateStore = defineStore({
+  id:'state',
   state: () => ({
-    search: false
+    search: true
   }),
   getters: {
-    search: (state) => state.search = !state.search
+    getSearch: (state) => state.search
   },
   actions: {
-    // increment() {
-    //   this.counter++
-    // }
+    setSearch(){
+      this.search = !this.search
+    }
   }
 })
