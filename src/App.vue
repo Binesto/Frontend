@@ -11,13 +11,15 @@
 <script setup>
 import Nav from '@/components/nav/nav.vue'
 import Search from '@/components/search.vue'
+import { ref } from 'vue';
+
 </script>
 
 <style lang="scss" scoped>
 .application {
-  @apply w-full h-screen flex bg-dark-100 p-8;
+  @apply w-full h-screen flex p-8 max-w-[120rem] mx-auto max-h-[80rem] m-auto;
   .wrap {
-    @apply w-full rounded-3xl bg-dark-200 p-8;
+    @apply w-full rounded-3xl bg-dark-200 overflow-hidden;
   }
 }
 </style>
