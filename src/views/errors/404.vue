@@ -17,7 +17,7 @@
                 <img class="h-full" src="@/assets/404.svg" alt="404" draggable="false" />
             </div>
         </div>
-        <div class="bg-black/20 w-full h-24 flex items-center justify-center z-10">
+        <div class="absolute bottom-0 w-full h-24 flex items-center justify-center z-10">
             <nav class="flex space-x-4">
                 <a href="#" class="text-sm font-medium text-gray-500 hover:text-gray-300">API Durumu</a>
                 <span class="inline-block border-l border-bn-gray-800" aria-hidden="true" />
