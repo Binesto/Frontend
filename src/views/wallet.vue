@@ -1,5 +1,5 @@
 <template>
-    <div>Wallet</div>
+    <div class="page">Wallet</div>
 </template>
 
 <script setup>

@@ -1,5 +1,5 @@
 <template>
-    <div>Markets</div>
+    <div class="page">Markets</div>
 </template>
 
 <script setup>
