@@ -12,7 +12,6 @@ body {
 input{
   accent-color: #B53BFE;
 }
-
 a {
   @apply text-primary;
 }
