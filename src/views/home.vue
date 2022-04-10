@@ -23,7 +23,7 @@
                 <mainStatistic />
             </template>
             <template #fallback>
-                <div class="skeleton h-48">
+                <div class="skeleton h-[203px]">
                     <div class="wrap">
                         <div class="card">
                             <div class="title"></div>

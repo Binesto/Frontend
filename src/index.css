@@ -56,6 +56,15 @@ a {
   @apply p-8
 }
 
+#chart svg{
+  @apply overflow-visible
+}
+
+
+.apexcharts-tooltip {
+  @apply bg-dark-200 !shadow-none font-medium
+}
+
 /* Buttons */
 
 .primary{
