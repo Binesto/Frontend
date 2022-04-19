@@ -39,13 +39,13 @@
                         <div class="flex flex-shrink-0 items-center px-8 relative">
                             <span class="absolute h-4/6 w-0.5 rounded-full right-0 bg-bn-gray-900"></span>
                             <div class="py-2 space-y-2">
-                                <span class="font-medium text-bn-gray-400 text-xs">Piyasa Değeri</span>
+                                <span class="font-medium text-bn-gray-400 text-xs">24s Hacim</span>
                                 <div class="text-xl font-bold">
                                     <span class="text-bn-gray-600">₺</span>54,067.75
                                 </div>
                                 <span
-                                    class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-bn-red/20 text-bn-red tracking-wide"
-                                >-%2.17</span>
+                                    class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-bn-green/20 text-bn-green tracking-wide"
+                                >%2.17</span>
                             </div>
                         </div>
                     </swiper-slide>
@@ -53,7 +53,7 @@
                         <div class="flex flex-shrink-0 items-center px-8 relative">
                             <span class="absolute h-4/6 w-0.5 rounded-full right-0 bg-bn-gray-900"></span>
                             <div class="py-2 space-y-2">
-                                <span class="font-medium text-bn-gray-400 text-xs">Piyasa Değeri</span>
+                                <span class="font-medium text-bn-gray-400 text-xs">24 Saatlik Değişim</span>
                                 <div class="text-xl font-bold">
                                     <span class="text-bn-gray-600">₺</span>54,067.75
                                 </div>

@@ -26,7 +26,6 @@ import { useSwiper } from 'swiper/vue';
 export default {
     setup() {
         const swiper = useSwiper();
-        console.log(swiper);
         return {
             swiper,
         };

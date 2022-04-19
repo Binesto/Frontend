@@ -40,6 +40,10 @@
             </template>
         </suspense>
     </div>
+    <div class="w-full h-96 mt-8 space-x-8 flex px-16">
+        <orderSide />
+        <div class="w-1/3 h-full bg-dark-100 rounded-3xl"></div>
+    </div>
 </template>
 
 <script setup>
@@ -48,6 +52,7 @@ import { defineAsyncComponent } from 'vue';
 // This is a way to load a component asynchronously.
 const heading = defineAsyncComponent(() => import('@/components/home/heading.vue'));
 const mainStatistic = defineAsyncComponent(() => import('@/components/home/mStatistic.vue'));
+const orderSide = defineAsyncComponent(() => import('@/components/home/orderSide.vue'));
 </script>
 
 <style lang="scss" scoped>

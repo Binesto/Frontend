@@ -21,7 +21,7 @@
 </template>
 
 <script setup>
-import staticChart from './staticChart.vue'
+import staticChart from './detail/staticChart.vue'
 import mDetail from './mDetail.vue'
 </script>
 

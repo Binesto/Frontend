@@ -3,8 +3,7 @@
         <Dialog
             as="div"
             class="fixed inset-0 z-10 overflow-y-auto p-4 sm:p-6 md:p-20"
-            @close="stateStore.setSearch"
-        >
+            @close="stateStore.setSearch">
             <TransitionChild
                 as="template"
                 enter="ease-out duration-300"
