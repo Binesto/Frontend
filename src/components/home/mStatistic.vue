@@ -7,7 +7,7 @@
                 <div class="mstat__content__detail">
                     <span class="mstat__content__detail__unit">₺</span>54,067.75
                 </div>
-                <span class="mstat__content__percentile rise">%2.17</span>
+                <span class="mstat__content__percentile drop">%2.17</span>
             </div>
             <staticChart />
         </div>
@@ -48,7 +48,7 @@ import mDetail from './mDetail.vue'
                 }
             }
             &__percentile{
-                @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium tracking-wide;
+                @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-bn-gray-500/20 text-bn-gray-500 tracking-wide;
             }
             .drop{
                 @apply bg-bn-red/20 text-bn-red before:content-['-'];
