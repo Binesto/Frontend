@@ -10,7 +10,7 @@ export default {
         return {
             series: [
                 {
-                    data: [31, 40, 28, 51, 42, 109, 100],
+                    data: [100, 40, 28, 51, 42, 109, 100],
                 },
             ],
             chartOptions: {

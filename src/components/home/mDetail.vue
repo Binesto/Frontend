@@ -19,8 +19,43 @@
                     }"
                     @swiper="onSwiper"
                     @slideChange="onSlideChange"
-                    class="swp-contain__wrap__contain__swiper">
-                    <swiper-slide class="swp-contain__wrap__contain__swiper__slide">
+                    class="swp-contain__wrap__contain__swpr">
+                    <swiper-slide class="swp-contain__wrap__contain__swpr__slide">
+                        <div class="swp-slide">
+                            <span class="swp-slide__overlay"></span>
+                            <div class="swp-slide__content">
+                                <span class="swp-slide__content__title">24s Değişim</span>
+                                <div class="swp-slide__content__detail" direction="left" unit="₺">
+                                    54,067.75
+                                </div>
+                                <span class="swp-slide__content__percentile rise">%2.17</span>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide class="swp-contain__wrap__contain__swpr__slide">
+                        <div class="swp-slide">
+                            <span class="swp-slide__overlay"></span>
+                            <div class="swp-slide__content">
+                                <span class="swp-slide__content__title">24s En Yüksek</span>
+                                <div class="swp-slide__content__detail" direction="left" unit="₺">
+                                    54,067.75
+                                </div>
+                            </div>
+                        </div>
+                    </swiper-slide>
+                    <swiper-slide class="swp-contain__wrap__contain__swpr__slide">
+                        <div class="swp-slide">
+                            <span class="swp-slide__overlay"></span>
+                            <div class="swp-slide__content">
+                                <span class="swp-slide__content__title">24s En Düşük</span>
+                                <div class="swp-slide__content__detail" direction="right" unit="ETH">
+                                    54,067.75
+                                </div>
+                            </div>
+                        </div>
+                    </swiper-slide>
+
+                    <swiper-slide class="swp-contain__wrap__contain__swpr__slide">
                         <div class="swp-slide">
                             <span class="swp-slide__overlay"></span>
                             <div class="swp-slide__content">
@@ -28,19 +63,6 @@
                                 <div class="swp-slide__content__detail" direction="right" unit="ETH">
                                     54,067.75
                                 </div>
-                                <span class="swp-slide__content__percentile drop">%2.17</span>
-                            </div>
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide class="swp-contain__wrap__contain__swiper__slide">
-                        <div class="swp-slide">
-                            <span class="swp-slide__overlay"></span>
-                            <div class="swp-slide__content">
-                                <span class="swp-slide__content__title">24 Saatlik Değişim</span>
-                                <div class="swp-slide__content__detail" direction="left" unit="₺">
-                                    54,067.75
-                                </div>
-                                <span class="swp-slide__content__percentile drop">%2.17</span>
                             </div>
                         </div>
                     </swiper-slide>
@@ -74,7 +96,7 @@ const onSlideChange = () => {
         @apply flex h-full w-full;
         &__contain{
             @apply w-full h-full;
-            &__swiper{
+            &__swpr{
                 @apply w-full overflow-hidden;
                 &__slide{
                     @apply w-full h-full;

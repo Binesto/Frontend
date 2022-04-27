@@ -9,6 +9,17 @@
 </template>
 
 <script setup>
+
+
+// TODO
+
+//TODO: drop rise statment larını attribute haline getir
+//TODO: skeleton css i yaz ve debug da tanımla
+//TODO: whell scroll kütüpahanesini ekle ve kullan
+//TODO: sidebar responsive için css düzenlemeleri yap
+
+
+
 import Nav from '@/components/nav/nav.vue'
 import Search from '@/components/search.vue'
 import { ref } from 'vue';
