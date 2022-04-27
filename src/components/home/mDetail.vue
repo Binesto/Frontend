@@ -1,7 +1,7 @@
 <template>
-    <div class="mt-4 flex relative overflow-visible">
-        <div class="flex h-full w-full min-h-24">
-            <div class="w-full h-full ">
+    <div class="swp-contain">
+        <div class="swp-contain__wrap">
+            <div class="swp-contain__wrap__contain">
                 <swiper
                     :slides-per-view="4"
                     :space-between="0"
@@ -19,64 +19,32 @@
                     }"
                     @swiper="onSwiper"
                     @slideChange="onSlideChange"
-                    class="w-full overflow-visible"
-                >
-                    <swiper-slide class="w-full h-full">
-                        <div class="flex flex-shrink-0 items-center px-8 relative">
-                            <span class="absolute h-4/6 w-0.5 rounded-full right-0 bg-bn-gray-900"></span>
-                            <div class="py-2 space-y-2">
-                                <span class="font-medium text-bn-gray-400 text-xs">Piyasa Değeri</span>
-                                <div class="text-xl font-bold">
-                                    <span class="text-bn-gray-600">₺</span>54,067.75
+                    class="swp-contain__wrap__contain__swiper">
+                    <swiper-slide class="swp-contain__wrap__contain__swiper__slide">
+                        <div class="swp-slide">
+                            <span class="swp-slide__overlay"></span>
+                            <div class="swp-slide__content">
+                                <span class="swp-slide__content__title">24s Hacim</span>
+                                <div class="swp-slide__content__detail" direction="right" unit="ETH">
+                                    54,067.75
                                 </div>
-                                <span
-                                    class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-bn-red/20 text-bn-red tracking-wide"
-                                >-%2.17</span>
+                                <span class="swp-slide__content__percentile drop">%2.17</span>
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide class="w-full h-full">
-                        <div class="flex flex-shrink-0 items-center px-8 relative">
-                            <span class="absolute h-4/6 w-0.5 rounded-full right-0 bg-bn-gray-900"></span>
-                            <div class="py-2 space-y-2">
-                                <span class="font-medium text-bn-gray-400 text-xs">24s Hacim</span>
-                                <div class="text-xl font-bold">
-                                    <span class="text-bn-gray-600">₺</span>54,067.75
+                    <swiper-slide class="swp-contain__wrap__contain__swiper__slide">
+                        <div class="swp-slide">
+                            <span class="swp-slide__overlay"></span>
+                            <div class="swp-slide__content">
+                                <span class="swp-slide__content__title">24 Saatlik Değişim</span>
+                                <div class="swp-slide__content__detail" direction="left" unit="₺">
+                                    54,067.75
                                 </div>
-                                <span
-                                    class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-bn-green/20 text-bn-green tracking-wide"
-                                >%2.17</span>
+                                <span class="swp-slide__content__percentile drop">%2.17</span>
                             </div>
                         </div>
                     </swiper-slide>
-                    <swiper-slide class="w-full h-full">
-                        <div class="flex flex-shrink-0 items-center px-8 relative">
-                            <span class="absolute h-4/6 w-0.5 rounded-full right-0 bg-bn-gray-900"></span>
-                            <div class="py-2 space-y-2">
-                                <span class="font-medium text-bn-gray-400 text-xs">24 Saatlik Değişim</span>
-                                <div class="text-xl font-bold">
-                                    <span class="text-bn-gray-600">₺</span>54,067.75
-                                </div>
-                                <span
-                                    class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-bn-red/20 text-bn-red tracking-wide"
-                                >-%2.17</span>
-                            </div>
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide class="w-full h-full">
-                        <div class="flex flex-shrink-0 items-center px-8 relative">
-                            <span class="absolute h-4/6 w-0.5 rounded-full right-0 bg-bn-gray-900"></span>
-                            <div class="py-2 space-y-2">
-                                <span class="font-medium text-bn-gray-400 text-xs">Piyasa Değeri</span>
-                                <div class="text-xl font-bold">
-                                    <span class="text-bn-gray-600">₺</span>54,067.75
-                                </div>
-                                <span
-                                    class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-bn-red/20 text-bn-red tracking-wide"
-                                >-%2.17</span>
-                            </div>
-                        </div>
-                    </swiper-slide>
+
                     <nextBtn />
                 </swiper>
             </div>
@@ -84,7 +52,6 @@
         </div>
     </div>
 </template>
-
 <script setup>
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -100,6 +67,52 @@ const onSlideChange = () => {
 };
 
 </script>
-
 <style lang="scss" scoped>
+.swp-contain{
+    @apply mt-4 flex relative overflow-visible;
+    &__wrap{
+        @apply flex h-full w-full;
+        &__contain{
+            @apply w-full h-full;
+            &__swiper{
+                @apply w-full overflow-hidden;
+                &__slide{
+                    @apply w-full h-full;
+                    .swp-slide{
+                        @apply flex flex-shrink-0 items-center px-8 relative;
+                        &__overlay{
+                            @apply absolute h-4/6 w-0.5 rounded-full right-0 bg-bn-gray-900;
+                        }
+                        &__content{
+                            @apply py-2 space-y-2;
+                            &__title{
+                                @apply font-medium text-bn-gray-400 text-xs;
+                            }
+                            &__detail{
+                                @apply text-xl font-bold inline-flex items-end;
+                                &[direction="left"]{
+                                    @apply before:content-[attr(unit)] before:text-xl before:font-bold before:text-bn-gray-500;
+                                }
+                                &[direction="right"]{
+                                    @apply after:content-[attr(unit)] after:ml-1 after:text-sm after:font-bold after:text-bn-gray-500;
+                                }
+                            }
+                            &__percentile{
+                                @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-bn-gray-500/20 text-bn-gray-500 tracking-wide;
+                            }
+                            .drop{
+                                @apply bg-bn-red/20 text-bn-red before:content-['-'];
+                            }
+                            .rise{
+                                @apply bg-bn-green/20 text-bn-green;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 </style>
+
+
