@@ -42,7 +42,7 @@
     </div>
     <div class="w-full h-96 mt-8 space-x-8 flex px-16">
         <orderSide />
-        <div class="w-1/3 h-full bg-dark-100 rounded-3xl"></div>
+        <processSide />
     </div>
 </template>
 
@@ -53,6 +53,7 @@ import { defineAsyncComponent } from 'vue';
 const heading = defineAsyncComponent(() => import('@/components/home/heading.vue'));
 const mainStatistic = defineAsyncComponent(() => import('@/components/home/mStatistic.vue'));
 const orderSide = defineAsyncComponent(() => import('@/components/home/orderSide.vue'));
+const processSide = defineAsyncComponent(() => import('@/components/home/processSide.vue'));
 </script>
 
 <style lang="scss" scoped>
