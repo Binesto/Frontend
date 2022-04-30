@@ -16,7 +16,7 @@
             </svg>
         </button>
         <div
-            class="w-48 right-0 top-0 h-full absolute bg-gradient-to-r from-transparent to-dark-100 -z-10 pointer-events-none"
+            class="w-96 right-0 top-0 h-full absolute bg-gradient-to-r from-transparent to-dark-100 -z-10 pointer-events-none"
         ></div>
     </div>
 </template>
