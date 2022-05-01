@@ -11,11 +11,7 @@
 <script setup>
 
 
-// TODO
-
-//TODO: drop rise statment larını attribute haline getir
 //TODO: skeleton css i yaz ve debug da tanımla
-//TODO: whell scroll kütüpahanesini ekle ve kullan
 //TODO: sidebar responsive için css düzenlemeleri yap
 
 

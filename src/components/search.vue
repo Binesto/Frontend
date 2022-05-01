@@ -2,7 +2,7 @@
     <TransitionRoot :show="stateStore.getSearch" as="template" @after-leave="query = ''">
         <Dialog
             as="div"
-            class="fixed inset-0 z-10 overflow-y-auto p-4 sm:p-6 md:p-20"
+            class="fixed inset-0 z-20 overflow-y-auto p-4 sm:p-6 md:p-20"
             @close="stateStore.setSearch">
             <TransitionChild
                 as="template"
