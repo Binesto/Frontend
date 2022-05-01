@@ -40,7 +40,7 @@
             </template>
         </suspense>
     </div>
-    <div class="w-full h-96 mt-8 space-x-8 flex px-16">
+    <div class="w-full mt-8 space-x-8 flex px-16">
         <orderSide />
         <processSide />
     </div>

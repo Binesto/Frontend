@@ -53,7 +53,7 @@ a {
 }
 
 .page{
-  @apply p-8
+  @apply p-8 overflow-auto
 }
 
 #chart svg{

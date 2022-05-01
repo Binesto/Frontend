@@ -25,6 +25,36 @@
           </td>
           <td class="side__table__body__wrap__progress" :class="type === 'buy' ? 'buy' : 'sell'" width="50%"></td>
         </tr>
+        <tr class="side__table__body__wrap">
+          <td class="side__table__body__wrap__content">
+            11,795.70
+            <span class="side__table__body__wrap__content__unit">₺</span>
+          </td>
+          <td class="side__table__body__wrap__content">
+            11,795.70
+            <span class="side__table__body__wrap__content__unit">BTC</span>
+          </td>
+          <td class="side__table__body__wrap__content">
+            11,795.70
+            <span class="side__table__body__wrap__content__unit">₺</span>
+          </td>
+          <td class="side__table__body__wrap__progress" :class="type === 'buy' ? 'buy' : 'sell'" width="50%"></td>
+        </tr>
+        <tr class="side__table__body__wrap">
+          <td class="side__table__body__wrap__content">
+            11,795.70
+            <span class="side__table__body__wrap__content__unit">₺</span>
+          </td>
+          <td class="side__table__body__wrap__content">
+            11,795.70
+            <span class="side__table__body__wrap__content__unit">BTC</span>
+          </td>
+          <td class="side__table__body__wrap__content">
+            11,795.70
+            <span class="side__table__body__wrap__content__unit">₺</span>
+          </td>
+          <td class="side__table__body__wrap__progress" :class="type === 'buy' ? 'buy' : 'sell'" width="50%"></td>
+        </tr>
       </tbody>
     </table>
   </div>

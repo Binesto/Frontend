@@ -3,7 +3,9 @@
   <div class="application">
     <Nav />
     <div class="wrap">
-      <router-view></router-view>
+      <div>
+        <router-view></router-view>
+      </div>
     </div>
   </div>
 </template>
@@ -27,6 +29,9 @@ import { ref } from 'vue';
   @apply w-full h-screen flex p-8 max-w-[120rem] mx-auto max-h-[80rem] m-auto;
   .wrap {
     @apply w-full rounded-3xl bg-dark-200 overflow-hidden;
+    div{
+      @apply w-full h-full overflow-auto;
+    }
   }
 }
 </style>

@@ -11,19 +11,31 @@
     <div class="main__type">
       <button
         @click="type(0)"
-        :class="activeType == 0 ? 'bg-bn-gray-700/30 text-bn-gray-300' : 'bg-bn-gray-900/30 text-bn-gray-600'"
+        :class="
+          activeType == 0
+            ? 'bg-bn-gray-700/30 text-bn-gray-300'
+            : 'bg-bn-gray-900/30 text-bn-gray-600'
+        "
       >
         Limit
       </button>
       <button
         @click="type(1)"
-        :class="activeType == 1 ? 'bg-bn-gray-700/30 text-bn-gray-300' : 'bg-bn-gray-900/30 text-bn-gray-600'"
+        :class="
+          activeType == 1
+            ? 'bg-bn-gray-700/30 text-bn-gray-300'
+            : 'bg-bn-gray-900/30 text-bn-gray-600'
+        "
       >
         Piyasa
       </button>
       <button
         @click="type(2)"
-        :class="activeType == 2 ? 'bg-bn-gray-700/30 text-bn-gray-300' : 'bg-bn-gray-900/30 text-bn-gray-600'"
+        :class="
+          activeType == 2
+            ? 'bg-bn-gray-700/30 text-bn-gray-300'
+            : 'bg-bn-gray-900/30 text-bn-gray-600'
+        "
       >
         Koşul
       </button>
@@ -33,58 +45,91 @@
       <div class="main__balance__title">Kullanılabilir Bakiye</div>
       <div class="main__balance__price" unit="₺">5.00</div>
     </div>
-    
-    <inputP title="Fiyat" />
+    <TransitionRoot
+      :show="isShowing"
+      enter="transition-all duration-200"
+      enter-from="h-0 opacity-0"
+      enter-to="h-8 opacity-100"
+      leave="transition-all duration-200"
+      leave-from="h-8 opacity-100"
+      leave-to="h-0 opacity-0"
+    >
+      <inputP
+        title="Koşul"
+        placeholder="12.1125421"
+        unit="₺"
+        currency="true"
+      />
+    </TransitionRoot>
+    <inputP
+      title="Fiyat"
+      placeholder="12.1125421"
+      unit="₺"
+      currency="true"
+      :disabled="markets"
+    />
+    <inputP
+      title="Miktar"
+      placeholder="12.1125421"
+      unit="eth"
+      :disabled="markets"
+    />
+    <inputP title="Toplam" placeholder="12.1125421" unit="eth" />
 
     <button
       class="main__process"
       @click="process"
-      :class="activeTab == 0 ? 'buy' : 'sell'">
+      :class="activeTab == 0 ? 'buy' : 'sell'"
+    >
       {{ activeTab == 0 ? "Alış Emri Ver" : "Satış Emri Ver" }}
     </button>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import inputP from "./process/input.vue";
+import { TransitionRoot } from "@headlessui/vue";
 const activeTab = ref(0);
 const activeType = ref(0);
 const tab = (val) => (activeTab.value = val);
 const type = (val) => (activeType.value = val);
-
-
-const process = () =>{
-  if(activeTab.value == 0){
+const markets = ref(false);
+const isShowing = ref(false);
+const process = () => {
+  if (activeTab.value == 0) {
     console.log("Alış Emri Ver");
-    switch(activeType.value){
-      case 0:
-        console.log("Limit");
-        break;
-      case 1:
-        console.log("Piyasa");
-        break;
-      case 2:
-        console.log("Koşul");
-        break;
-    }
-  }else{
+    isType("buy");
+  } else {
     console.log("Satış Emri Ver");
-    switch(activeType.value){
-      case 0:
-        console.log("Limit");
-        break;
-      case 1:
-        console.log("Piyasa");
-        break;
-      case 2:
-        console.log("Koşul");
-        break;
-    }
+    isType("sell");
   }
-}
+};
 
+const isType = (active) => {
+  console.log(active);
+  switch (activeType.value) {
+    case 0:
+      console.log("Limit");
+      break;
+    case 1:
+      console.log("Piyasa");
+      break;
+    case 2:
+      console.log("Koşul");
+      break;
+  }
+};
 
+watch(activeType, (val) => {
+  markets.value = false;
+  isShowing.value = false;
+  if (val == 1) {
+    markets.value = true;
+  } else if (val == 2) {
+    isShowing.value = true;
+  }
+});
 </script>
 
 <style lang="scss" scoped>
