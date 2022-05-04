@@ -4,6 +4,9 @@
       <orderSide title="Alış Emri" type="buy" />
       <orderSide title="Satış Emri" type="sell" />
     </div>
+    <div>
+      
+    </div>
   </div>
 </template>
 

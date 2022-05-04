@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
 @tailwind base;
 
 * {
@@ -9,8 +9,8 @@ body {
   @apply text-white bg-dark-100;
 }
 
-input{
-  accent-color: #B53BFE;
+input {
+  accent-color: #b53bfe;
 }
 a {
   @apply text-primary;
@@ -21,23 +21,9 @@ a {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 0px;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f100;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  @apply bg-gray-500/30;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-gray-500/60;
-}
 
 #nprogress .bar {
   background: rgb(181 59 254) !important;
@@ -52,23 +38,30 @@ a {
   display: none;
 }
 
-.page{
-  @apply p-8 overflow-auto
+.page {
+  @apply p-8 overflow-auto;
 }
 
-#chart svg{
-  @apply overflow-visible
+#chart svg {
+  @apply overflow-visible;
 }
-
 
 .apexcharts-tooltip {
-  @apply bg-dark-200 !shadow-none font-medium
+  @apply bg-dark-200 !shadow-none font-medium;
 }
 
 /* Buttons */
 
-.primary{
-  @apply transition bg-primary/10 hover:bg-primary/20 text-primary px-4 py-2.5 text-xs font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30 ;
+.primary {
+  @apply transition bg-primary/10 hover:bg-primary/20 text-primary px-4 py-2.5 text-xs font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30;
+}
+
+.ps__rail-x, .ps__rail-y{
+  @apply !bg-transparent
+}
+
+.ps__rail-x, .ps__thumb-y{
+  @apply !bg-transparent relative rounded-xl hover:!bg-transparent flex border-y-8 border-transparent after:content-[''] after:absolute after:bg-white/10 after:hover:bg-white/30 after:w-full after:h-full after:rounded-xl
 }
 
 @tailwind components;

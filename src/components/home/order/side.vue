@@ -69,7 +69,7 @@ defineProps({
 
 <style lang="scss" scoped>
 .side {
-  @apply w-full h-full overflow-auto;
+  @apply w-full h-96 overflow-auto;
   &::-webkit-scrollbar {
     @apply w-1 h-1;
   }

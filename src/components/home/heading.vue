@@ -1,7 +1,7 @@
 <template>
     <div class="heading">
-        <div class="flex space-x-3 items-center">
-            <div class="rounded-xl h-16 w-16 bg-white/5 flex items-center justify-center">
+        <div class="heading__wrap">
+            <div class="rounded-xl h-14 w-14 bg-white/5 flex items-center justify-center">
                 <svg
                     width="20"
                     height="34"
@@ -15,9 +15,9 @@
                     />
                 </svg>
             </div>
-            <div class="space-y-1">
+            <div>
                 <div class="text-xs font-semibold text-white/60">ETH</div>
-                <div class="text-xl font-bold">Etherium - TRY</div>
+                <div class="text-lg font-bold">Etherium - TRY</div>
             </div>
             <svg
                 class="h-72 w-72 absolute -top-5 -right-10 -rotate-12 text-white/5"
@@ -37,5 +37,8 @@
 <style lang="scss" scoped>
 .heading {
     @apply px-16 w-full bg-[#37367B]/10 h-full items-center flex relative overflow-hidden;
+    &__wrap{
+        @apply flex space-x-3 items-center;
+    }
 }
 </style>

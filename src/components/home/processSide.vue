@@ -54,12 +54,7 @@
       leave-from="h-8 opacity-100"
       leave-to="h-0 opacity-0"
     >
-      <inputP
-        title="Koşul"
-        placeholder="12.1125421"
-        unit="₺"
-        currency="true"
-      />
+      <inputP title="Koşul" placeholder="12.1125421" unit="₺" currency="true" />
     </TransitionRoot>
     <inputP
       title="Fiyat"
@@ -90,12 +85,16 @@
 import { ref, watch } from "vue";
 import inputP from "./process/input.vue";
 import { TransitionRoot } from "@headlessui/vue";
+
+
 const activeTab = ref(0);
 const activeType = ref(0);
 const tab = (val) => (activeTab.value = val);
 const type = (val) => (activeType.value = val);
 const markets = ref(false);
 const isShowing = ref(false);
+
+
 const process = () => {
   if (activeTab.value == 0) {
     console.log("Alış Emri Ver");
@@ -130,6 +129,8 @@ watch(activeType, (val) => {
     isShowing.value = true;
   }
 });
+
+
 </script>
 
 <style lang="scss" scoped>
