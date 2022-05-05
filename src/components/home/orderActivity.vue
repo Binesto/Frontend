@@ -176,19 +176,19 @@ setCurrent(0, 1);
 .order {
   @apply w-full h-auto bg-dark-100 border-2 border-bn-gray-800/20 rounded-3xl overflow-hidden;
   &__tab {
-    @apply border-y border-bn-gray-800/20;
+    @apply border-y border-bn-gray-800/20 px-2;
     &__nav {
       @apply -mb-px flex px-4 py-2.5 space-x-2 max-w-max relative;
       &__item {
         @apply w-44 text-center select-none rounded-xl transition-all duration-200 border-b-0 border-transparent hover:bg-bn-gray-700/5 px-8 py-3 cursor-pointer text-white/50 whitespace-nowrap font-medium text-xs;
       }
       &__item.active {
-        @apply transition-all duration-200 text-primary/80 shadow-lg;
+        @apply transition-all duration-200 text-bn-gray-300 shadow-lg;
       }
       &__indicator {
         @apply absolute top-1/2 left-1/2 -translate-x-1/2 transform  -translate-y-1/2 w-full h-full rounded-xl pointer-events-none;
         &__ind {
-          @apply transition-all duration-200 bg-primary/5 rounded-xl absolute top-1/2 transform -translate-y-1/2 h-4/6 w-44;
+          @apply transition-all duration-200 bg-bn-gray-500/5 rounded-xl absolute top-1/2 transform -translate-y-1/2 h-4/6 w-44;
         }
       }
     }
