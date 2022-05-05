@@ -4,9 +4,6 @@
       <orderSide title="Alış Emri" type="buy" />
       <orderSide title="Satış Emri" type="sell" />
     </div>
-    <div>
-      
-    </div>
   </div>
 </template>
 
@@ -16,7 +13,7 @@ import orderSide from './order/side.vue';
 
 <style lang="scss" scoped>
 .order {
-  @apply w-full h-full bg-dark-100 border-2 border-bn-gray-800/20 rounded-3xl overflow-hidden;
+  @apply w-full h-auto bg-dark-100 border-2 border-bn-gray-800/20 rounded-3xl overflow-hidden;
   &__wrap {
     @apply w-full h-full flex divide-x divide-bn-gray-900;
   }

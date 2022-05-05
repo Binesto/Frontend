@@ -3,11 +3,14 @@
     <div class="h-48">
       <heading />
     </div>
-    <div class="-mt-12 px-16 flex">
+    <div class="-mt-10 px-16 flex">
       <mainStatistic />
     </div>
     <div class="w-full mt-8 space-x-8 flex px-16 pb-16">
-      <orderSide />
+      <div class="w-full space-y-8 max-h-content">
+        <orderSide />
+        <activtySide />
+      </div>
       <processSide />
     </div>
   </perfect-scrollbar>
@@ -33,6 +36,7 @@
 import heading from "../components/home/heading.vue";
 import mainStatistic from "../components/home/mStatistic.vue";
 import orderSide from "../components/home/orderSide.vue";
+import activtySide from "../components/home/orderActivity.vue";
 import processSide from "../components/home/processSide.vue";
 </script>
 

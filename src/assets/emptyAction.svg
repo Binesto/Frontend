@@ -1,0 +1,50 @@
+<svg width="241" height="124" viewBox="0 0 241 124" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<style>.Group_218_493 {
+	animation: 4s ease-in-out infinite forwards Group_218_493;
+		transform: translateX(0px) translateY(-0.23px);
+}
+@keyframes Group_218_493 {
+	0% {
+		transform: translateX(0px) translateY(-0.23px);
+	}
+	50% {
+		transform: translateX(0px) translateY(6.77px);
+	}
+	100% {
+		transform: translateX(0px) translateY(-0.23px);
+	}
+}.Group_219_678 {
+	animation: 4s ease-in-out infinite forwards Group_219_678;
+		transform: translateX(37px) translateY(31.77px);
+}
+@keyframes Group_219_678 {
+	0% {
+		transform: translateX(37px) translateY(31.77px);
+	}
+	50% {
+		transform: translateX(37px) translateY(40.77px);
+	}
+	100% {
+		transform: translateX(37px) translateY(31.77px);
+	}
+}
+</style>
+<g clip-path="url(#clip_0_717)" width="241" height="124" data-name="Frame 213">
+	<g transform="translate(9 20.23)" width="225" height="82.07" data-name="Group 220">
+		<g class="Group_218_493" width="188" height="50" data-name="Group 218">
+			<rect width="188" height="50" rx="7" fill="#202021" data-name="Rectangle 148"/>
+			<rect width="187" height="49" rx="6.5" stroke="#D2D2D2" stroke-opacity="0.05" data-name="Rectangle 148"/>
+			<rect opacity="0.5" width="96" height="9" rx="2" fill="#97979B" data-name="Rectangle 150" transform="translate(24 16)"/>
+			<rect opacity="0.5" width="61" height="6" rx="2" fill="#747576" data-name="Rectangle 151" transform="translate(24 29)"/>
+		</g>
+		<g transform="translate(37 32.06)" class="Group_219_678" width="188" height="50" data-name="Group 219">
+			<rect width="188" height="50" rx="7" fill="#202021" data-name="Rectangle 148"/>
+			<rect width="187" height="49" rx="6.5" stroke="#D2D2D2" stroke-opacity="0.05" data-name="Rectangle 148"/>
+			<rect opacity="0.5" width="96" height="9" rx="2" fill="#97979B" data-name="Rectangle 150" transform="translate(24 16)"/>
+			<rect opacity="0.5" width="61" height="6" rx="2" fill="#747576" data-name="Rectangle 151" transform="translate(24 29)"/>
+		</g>
+	</g>
+</g>
+<defs><clipPath id="clip_0_717"><rect width="241" height="124"/></clipPath>
+</defs>
+</svg>
