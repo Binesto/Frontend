@@ -43,7 +43,7 @@
           <img src="@/assets/emptyAction.svg" draggable="false" />
           <h3 class="order__content__empty__alert__title">Bulunamadı...</h3>
           <p class="order__content__empty__alert__description">
-            {{ currentData.emptyMessage }}
+            Burda henüz herhangi bir işlem geçmişiniz bulunmamakta.
           </p>
         </div>
       </TransitionRoot>
@@ -72,15 +72,11 @@
           <tbody class="table__body">
             <tr class="table__body__wrap">
               <td class="table__body__wrap__content">
-                <span
-                  class="table__body__wrap__content__status" status="rise"
-                >
+                <span class="table__body__wrap__content__status" status="rise">
                   Alış
                 </span>
               </td>
-              <td class="table__body__wrap__content">
-                00:42:42
-              </td>
+              <td class="table__body__wrap__content">00:42:42</td>
               <td class="table__body__wrap__content">
                 11,795.70
                 <span class="table__body__wrap__content__unit">₺</span>
@@ -96,15 +92,11 @@
             </tr>
             <tr class="table__body__wrap">
               <td class="table__body__wrap__content">
-                <span
-                  class="table__body__wrap__content__status" status="drop"
-                >
+                <span class="table__body__wrap__content__status" status="drop">
                   Satış
                 </span>
               </td>
-              <td class="table__body__wrap__content">
-                00:42:42
-              </td>
+              <td class="table__body__wrap__content">00:42:42</td>
               <td class="table__body__wrap__content">
                 11,795.70
                 <span class="table__body__wrap__content__unit">₺</span>
@@ -135,21 +127,18 @@ const tabs = ref([
     name: "Açık Emirlerim",
     current: true,
     data: [1],
-    emptyMessage: "Henüz herhangi bir Açık Emriniz bulunmamakta.",
   },
   {
     id: 2,
     name: "Emir Geçmişim",
     current: false,
     data: [],
-    emptyMessage: "Henüz herhangi bir Emir Geçmişiniz bulunmamakta.",
   },
   {
     id: 3,
     name: "Piyasa Geçmişim",
     current: false,
     data: [],
-    emptyMessage: "Henüz herhangi bir Piyasa Geçmişiniz bulunmamakta.",
   },
 ]);
 
@@ -164,9 +153,7 @@ const setCurrent = (index, id) => {
       tab.current = true;
       if (tab.data.length > 0) isEmpty.value = false;
       else isEmpty.value = true;
-    } else {
-      tab.current = false;
-    }
+    } else tab.current = false;
   });
 };
 setCurrent(0, 1);
@@ -183,7 +170,7 @@ setCurrent(0, 1);
         @apply w-44 text-center select-none rounded-xl transition-all duration-200 border-b-0 border-transparent hover:bg-bn-gray-700/5 px-8 py-3 cursor-pointer text-white/50 whitespace-nowrap font-medium text-xs;
       }
       &__item.active {
-        @apply transition-all duration-200 text-bn-gray-300 shadow-lg;
+        @apply transition-all duration-200 text-bn-gray-200 shadow-lg hover:bg-transparent;
       }
       &__indicator {
         @apply absolute top-1/2 left-1/2 -translate-x-1/2 transform  -translate-y-1/2 w-full h-full rounded-xl pointer-events-none;

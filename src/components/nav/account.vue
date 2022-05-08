@@ -2,17 +2,17 @@
     <!-- This example requires Tailwind CSS v2.0+ -->
     <Menu as="div" class="w-full relative">
         <div>
-            <MenuButton class="account">
+            <MenuButton class="account" :class="{'px-4':!props.navState}">
                 <div class="account-wrap">
                     <div>
                         <img src="https://avatars.githubusercontent.com/u/47571500?v=4" />
                     </div>
-                    <div class="account-detail">
+                    <div class="account-detail" v-if="!props.navState">
                         <p class="account-name">Fatih Yıldız</p>
                         <p class="account-mail">0m.fatih.yildiz@gmail.com</p>
                     </div>
                 </div>
-                <svg viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg" v-if="!props.navState">
                     <path
                         d="M9 6L5 1.2L1 6"
                         stroke="#353E42"
@@ -39,7 +39,7 @@
             leave-from-class="transform scale-100 opacity-100"
             leave-to-class="transform scale-95 opacity-0"
         >
-            <MenuItems class="menuItems">
+            <MenuItems class="menuItems" :class="{minimized:props.navState}">
                 <div class="divide">
                     <MenuItem class="menuItem">
                         <button>
@@ -89,15 +89,20 @@
 
 <script setup>
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
+
+const props = defineProps({
+  navState: Boolean,
+});
+
 </script>
 
 <style lang="scss" scoped>
 .account {
-    @apply flex justify-between items-center flex-shrink-0 px-4 py-3 rounded-lg w-full mt-4 hover:bg-bn-gray-400/5;
+    @apply flex justify-between items-center flex-shrink-0 py-3 rounded-lg w-full mt-4 hover:bg-bn-gray-400/5;
     .account-wrap {
-        @apply flex items-center;
+        @apply flex items-center flex-shrink-0 mx-auto;
         img {
-            @apply inline-block h-8 w-8 rounded-full;
+            @apply flex h-8 w-8 rounded-full flex-shrink-0;
         }
         .account-detail {
             @apply ml-3 text-left;
@@ -114,7 +119,10 @@ import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue'
     }
 }
 .menuItems {
-    @apply absolute left-0 bottom-[70px] w-full mt-2 bg-dark-200 divide-y divide-dark-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none;
+    @apply absolute left-0 bottom-[70px] w-full mt-2 bg-dark-200 divide-y divide-dark-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none border border-white/5;
+    &.minimized{
+        @apply w-[220px] z-20
+    }
     .divide {
         @apply p-2;
         button {

@@ -16,23 +16,27 @@
       leave-from="opacity-100 scale-100"
       leave-to="opacity-0 scale-75"
     >
-      <div class="notification">5</div>
+      <div class="notification" :class="{'minimized':props.navState}">{{ props.navState ? null : 5 }}</div>
     </TransitionRoot>
   </button>
 </template>
 
 <script setup>
 import { TransitionRoot } from "@headlessui/vue";
-import { ref, inject, onMounted } from "vue";
+import { ref, inject, onMounted, watch } from "vue";
 import { useRouter, useRoute } from "vue-router";
-
 const props = defineProps({
   notification: Boolean,
   active: String,
+  navState: Boolean,
 });
 
-const active = inject("navActive");
+if (props.notification) {
+  console.log("notification");
+  console.log(props.navState);
+}
 
+const active = inject("navActive");
 // router
 const router = useRouter();
 const route = useRoute();
@@ -59,7 +63,10 @@ const routeCheck = () => {
     }
   }
   .notification {
-    @apply bg-primary text-white px-2 py-1 text-[12px] rounded-md font-medium;
+    @apply transition-all duration-200 bg-primary text-white px-2 py-1 text-[12px] rounded-md font-medium;
+    &.minimized{
+      @apply overflow-hidden h-2 w-2 p-0 right-1/2 transform -translate-x-1 translate-y-1 absolute
+    }
   }
 }
 .item.active {
@@ -71,4 +78,10 @@ const routeCheck = () => {
     @apply hidden;
   }
 }
+
+.closed{
+  .item{
+  }
+}
+
 </style>

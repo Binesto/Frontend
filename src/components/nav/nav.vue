@@ -1,7 +1,25 @@
 <template>
-  <div class="nav">
+  <div class="nav" :class="{closed:navActs}">
     <div class="content">
-      <Logo />
+      <Logo :navstatus="navActs" />
+      <button @click="navAc"
+        class="transition-all duration-200 z-10 absolute w-12 border-2 border-white/5 bg-bn-gray-900 hover:bg-bn-gray-800 text-bn-gray-400 hover:text-bn-gray-200 rounded-md py-2 flex items-center justify-center right-0 top-5 translate-x-6 cursor-pointer">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="transition-all duration-200 h-4 w-4"
+          :class="{'transform rotate-180' : navActs}"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2.5"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+      </button>
       <div class="menu">
         <div class="topMenu">
           <div class="other">
@@ -19,9 +37,9 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              <span>Ara</span>
+              <span :class="{hidden:navActs}">Ara</span>
             </MenuItem>
-            <MenuItem active="notification" :notification="notification">
+            <MenuItem active="notification" :notification="notification" :navState="navActs">
               <svg
                 viewBox="0 0 17 19"
                 fill="none"
@@ -41,10 +59,10 @@
                 />
               </svg>
 
-              <span>Bildirim</span>
+              <span :class="{hidden:navActs}">Bildirim</span>
             </MenuItem>
           </div>
-          <div class="menuInfo">Genel</div>
+          <div class="menuInfo" :class="{'!px-2':navActs}">Genel</div>
           <div class="general">
             <MenuItem active="home">
               <svg
@@ -65,7 +83,24 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              <span>Anasayfa</span>
+              <span :class="{hidden:navActs}">Anasayfa</span>
+            </MenuItem>
+            <MenuItem active="markets">
+              <svg
+                viewBox="0 0 17 17"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8.5 16V6.625M16 16V1M1 16V12.25"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+
+              <span :class="{hidden:navActs}">Piyasalar</span>
             </MenuItem>
             <MenuItem active="wallet">
               <svg
@@ -86,25 +121,7 @@
                   stroke-linejoin="round"
                 />
               </svg>
-
-              <span>Cüzdan</span>
-            </MenuItem>
-            <MenuItem active="markets">
-              <svg
-                viewBox="0 0 17 17"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M8.5 16V6.625M16 16V1M1 16V12.25"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-
-              <span>Piyasalar</span>
+              <span :class="{hidden:navActs}">Cüzdan</span>
             </MenuItem>
           </div>
         </div>
@@ -125,7 +142,7 @@
                 />
               </svg>
 
-              <span>Yardım</span>
+              <span :class="{hidden:navActs}">Yardım</span>
             </MenuItem>
             <MenuItem active="settings">
               <svg
@@ -149,10 +166,10 @@
                 />
               </svg>
 
-              <span>Ayarlar</span>
+              <span :class="{hidden:navActs}">Ayarlar</span>
             </MenuItem>
           </div>
-          <Account />
+          <Account :navState="navActs" />
         </div>
       </div>
     </div>
@@ -164,12 +181,16 @@ import { ref, provide, watch } from "vue";
 import Logo from "./logo.vue";
 import MenuItem from "./menuItem.vue";
 import Account from "./account.vue";
-import { useStateStore } from "../../stores/store.js";
+import { useStateStore } from "@/stores/store.js";
+const stateStore = useStateStore();
+
 // Logo Configure
 const logo = ref({
   height: "38",
   color: "#fff",
 });
+const navActs = ref(false);
+
 provide("logo", logo.value);
 
 // Notification Configure
@@ -179,18 +200,25 @@ const notification = ref(true);
 const navActive = ref("home");
 provide("navActive", navActive.value);
 
-//Search
-const stateStore = useStateStore();
+
 
 const search = () => {
   stateStore.setSearch();
 };
+
+
+const navAc = () => {
+  navActs.value = !navActs.value;
+};
+
 </script>
 
 <style lang="scss" scoped>
 .nav {
-  @apply w-[285px] flex-shrink-0 py-12;
-
+  @apply transition-all duration-200 w-[285px] flex-shrink-0 py-12 relative;
+  &.closed {
+    @apply w-[85px];
+  }
   .content {
     @apply h-full space-y-7 flex flex-col items-start;
 
@@ -198,7 +226,7 @@ const search = () => {
       @apply h-full w-full pr-8 space-y-2 flex flex-col justify-between;
 
       .menuInfo {
-        @apply text-l12 px-4 font-bold text-bn-gray-700 mt-3 mb-2 select-none;
+        @apply transition-all duration-200 text-l12 px-4 font-bold text-bn-gray-700 mt-3 mb-2 select-none;
       }
 
       .general,

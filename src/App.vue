@@ -12,8 +12,6 @@
 
 <script setup>
 
-
-//TODO: skeleton css i yaz ve debug da tanımla
 //TODO: sidebar responsive için css düzenlemeleri yap
 
 

@@ -184,7 +184,7 @@ import { computed, ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { SearchIcon } from '@heroicons/vue/solid'
 import { ChevronRightIcon, UsersIcon } from '@heroicons/vue/outline'
-import { useStateStore } from '../stores/store.js'
+import { useStateStore } from '@/stores/store.js'
 import {
     Combobox,
     ComboboxInput,
