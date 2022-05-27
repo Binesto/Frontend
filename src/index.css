@@ -60,7 +60,7 @@ a {
   @apply !bg-transparent
 }
 
-.ps__rail-x, .ps__thumb-y{
+.ps__thumb-y, .ps__thumb-x{
   @apply !bg-transparent relative rounded-xl hover:!bg-transparent flex border-y-8 border-transparent after:content-[''] after:absolute after:bg-white/10 after:hover:bg-white/30 after:w-full after:h-full after:rounded-xl
 }
 

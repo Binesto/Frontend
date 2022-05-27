@@ -1,13 +1,15 @@
 <template>
-  <div class="nav" :class="{closed:navActs}">
+  <div class="nav" :class="{ closed: navActs }">
     <div class="content">
       <Logo :navstatus="navActs" />
-      <button @click="navAc"
-        class="transition-all duration-200 z-10 absolute w-12 border-2 border-white/5 bg-bn-gray-900 hover:bg-bn-gray-800 text-bn-gray-400 hover:text-bn-gray-200 rounded-md py-2 flex items-center justify-center right-0 top-5 translate-x-6 cursor-pointer">
+      <button
+        @click="navAc"
+        class="transition-all duration-200 z-10 absolute w-12 border-2 border-white/5 bg-bn-gray-900 hover:bg-bn-gray-800 text-bn-gray-400 hover:text-bn-gray-200 rounded-md py-2 flex items-center justify-center right-0 top-5 translate-x-6 cursor-pointer"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="transition-all duration-200 h-4 w-4"
-          :class="{'transform rotate-180' : navActs}"
+          :class="{ 'transform rotate-180': navActs }"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -20,8 +22,8 @@
           />
         </svg>
       </button>
-      <div class="menu">
-        <div class="topMenu">
+      <perfect-scrollbar class="menu">
+        <div class="topMenu" :class="{'pt-16':navActs}">
           <div class="other">
             <MenuItem @click="search" active>
               <svg
@@ -37,9 +39,13 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              <span :class="{hidden:navActs}">Ara</span>
+              <span :class="{ hidden: navActs }">Ara</span>
             </MenuItem>
-            <MenuItem active="notification" :notification="notification" :navState="navActs">
+            <MenuItem
+              active="notification"
+              :notification="notification"
+              :navState="navActs"
+            >
               <svg
                 viewBox="0 0 17 19"
                 fill="none"
@@ -59,10 +65,10 @@
                 />
               </svg>
 
-              <span :class="{hidden:navActs}">Bildirim</span>
+              <span :class="{ hidden: navActs }">Bildirim</span>
             </MenuItem>
           </div>
-          <div class="menuInfo" :class="{'!px-2':navActs}">Genel</div>
+          <div class="menuInfo" :class="{ '!px-2': navActs }">Genel</div>
           <div class="general">
             <MenuItem active="home">
               <svg
@@ -83,7 +89,7 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              <span :class="{hidden:navActs}">Anasayfa</span>
+              <span :class="{ hidden: navActs }">Anasayfa</span>
             </MenuItem>
             <MenuItem active="markets">
               <svg
@@ -100,7 +106,7 @@
                 />
               </svg>
 
-              <span :class="{hidden:navActs}">Piyasalar</span>
+              <span :class="{ hidden: navActs }">Piyasalar</span>
             </MenuItem>
             <MenuItem active="wallet">
               <svg
@@ -121,11 +127,11 @@
                   stroke-linejoin="round"
                 />
               </svg>
-              <span :class="{hidden:navActs}">Cüzdan</span>
+              <span :class="{ hidden: navActs }">Cüzdan</span>
             </MenuItem>
           </div>
         </div>
-        <div class="bottomMenu">
+        <div class="bottomMenu pt-16">
           <div class="general">
             <MenuItem active>
               <svg
@@ -142,7 +148,7 @@
                 />
               </svg>
 
-              <span :class="{hidden:navActs}">Yardım</span>
+              <span :class="{ hidden: navActs }">Yardım</span>
             </MenuItem>
             <MenuItem active="settings">
               <svg
@@ -166,12 +172,13 @@
                 />
               </svg>
 
-              <span :class="{hidden:navActs}">Ayarlar</span>
+              <span :class="{ hidden: navActs }">Ayarlar</span>
             </MenuItem>
           </div>
-          <Account :navState="navActs" />
+          
         </div>
-      </div>
+      </perfect-scrollbar>
+      <Account :navState="navActs" />
     </div>
   </div>
 </template>
@@ -200,31 +207,29 @@ const notification = ref(true);
 const navActive = ref("home");
 provide("navActive", navActive.value);
 
-
-
 const search = () => {
   stateStore.setSearch();
 };
 
-
 const navAc = () => {
   navActs.value = !navActs.value;
 };
-
 </script>
 
 <style lang="scss" scoped>
 .nav {
-  @apply transition-all duration-200 w-[285px] flex-shrink-0 py-12 relative;
+  @apply transition-all duration-200 w-[285px] flex-shrink-0 pt-12 pb-6 relative;
   &.closed {
     @apply w-[85px];
   }
   .content {
-    @apply h-full space-y-7 flex flex-col items-start;
+    @apply h-full w-full space-y-7 flex flex-col items-start;
 
     .menu {
-      @apply h-full w-full pr-8 space-y-2 flex flex-col justify-between;
-
+      @apply h-full w-full pr-8 pl-0.5 space-y-2 flex overflow-x-visible flex-col justify-between py-3;
+      .topMenu{
+        @apply transition-all duration-200;
+      }
       .menuInfo {
         @apply transition-all duration-200 text-l12 px-4 font-bold text-bn-gray-700 mt-3 mb-2 select-none;
       }

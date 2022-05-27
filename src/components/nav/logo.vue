@@ -1,5 +1,5 @@
 <template>
-    <div class="px-4 transition-all duration-200" :class="{'pb-24':navstatus}">
+    <div class="px-4 transition-all duration-200">
         <svg
             :height="logo.height"
             viewBox="0 0 402 128"
