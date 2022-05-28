@@ -150,7 +150,7 @@
 
               <span :class="{ hidden: navActs }">Yardım</span>
             </MenuItem>
-            <MenuItem active="settings">
+            <MenuItem active="settings" v-tooltip:top.tooltip="'Ayarlar'">
               <svg
                 viewBox="0 0 17 17"
                 fill="none"
