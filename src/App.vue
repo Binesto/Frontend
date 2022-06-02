@@ -24,7 +24,7 @@ import { ref } from 'vue';
 
 <style lang="scss" scoped>
 .application {
-  @apply w-full h-screen flex p-8 max-w-[120rem] mx-auto max-h-[80rem] m-auto;
+  @apply w-full h-screen flex py-8 pr-8 max-w-[120rem] mx-auto max-h-[80rem] m-auto;
   .wrap {
     @apply w-full rounded-xl bg-dark-200 overflow-hidden border-2 border-bn-gray-800/20;
     div{

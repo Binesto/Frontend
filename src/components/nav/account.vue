@@ -1,6 +1,6 @@
 <template>
     <!-- This example requires Tailwind CSS v2.0+ -->
-    <Menu as="div" class="w-full pl-0.5 pr-7 relative !mt-1">
+    <Menu as="div" class="z-10 w-full pl-1.5 pr-7 mx-3 relative !mt-1">
         <div>
             <MenuButton class="account" :class="{'px-4':!props.navState}">
                 <div class="account-wrap">
@@ -98,7 +98,7 @@ const props = defineProps({
 
 <style lang="scss" scoped>
 .account {
-    @apply flex justify-between items-center flex-shrink-0 py-3 rounded-lg w-full hover:bg-bn-gray-400/5;
+    @apply mx-auto flex justify-between items-center flex-shrink-0 py-3 rounded-lg w-full hover:bg-bn-gray-400/5;
     .account-wrap {
         @apply flex items-center flex-shrink-0 mx-auto;
         img {
@@ -119,7 +119,7 @@ const props = defineProps({
     }
 }
 .menuItems {
-    @apply absolute left-0 bottom-[70px] mt-2 w-[260px] bg-dark-200 divide-y divide-dark-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none border border-white/5;
+    @apply absolute left-1.5 bottom-[70px] mt-2 w-[260px] bg-dark-200 divide-y divide-dark-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none border border-white/5;
     &.minimized{
         @apply w-[220px] z-20
     }

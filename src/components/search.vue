@@ -43,53 +43,22 @@
                         />
                     </div>
 
-                    <ComboboxOptions
-                        v-if="query === '' || filteredCoin.length > 0"
-                        class="flex divide-x divide-dark-100"
-                        as="div"
-                        static
-                        hold
-                    >
-                        <div
-                            :class="['max-h-96 min-w-0 flex-auto scroll-py-4 overflow-y-auto px-6 py-4', activeOption && 'sm:h-96']"
-                        >
-                            <h2
-                                v-if="query === ''"
-                                class="mt-2 mb-4 text-xs font-semibold text-gray-500 select-none"
-                            >Popüler Aramalar</h2>
+                    <ComboboxOptions v-if="query === '' || filteredCoin.length > 0" class="flex divide-x divide-dark-100" as="div" static hold>
+                        <div :class="['max-h-96 min-w-0 flex-auto scroll-py-4 overflow-y-auto px-6 py-4', activeOption && 'sm:h-96']">
+                            <h2 v-if="query === ''" class="mt-2 mb-4 text-xs font-semibold text-gray-500 select-none">Popüler Aramalar</h2>
                             <div hold class="-mx-2 text-sm text-gray-500">
-                                <ComboboxOption
-                                    v-for="unit in query === '' ? recent : filteredCoin"
-                                    :key="unit.id"
-                                    :value="unit"
-                                    as="template"
-                                    v-slot="{ active }"
-                                >
-                                    <div
-                                        :class="['group flex justify-between select-none items-center rounded-md p-2 cursor-pointer', active && 'bg-black/10 text-white']"
-                                    >
+                                <ComboboxOption v-for="unit in query === '' ? recent : filteredCoin" :key="unit.id" :value="unit" as="template" v-slot="{ active }">
+                                    <div :class="['group flex justify-between select-none items-center rounded-md p-2 cursor-pointer', active && 'bg-black/10 text-white']">
                                         <div class="flex justify-center items-center">
-                                            <svg
-                                                class="w-5 h-5"
-                                                :viewBox="unit.viewbox"
-                                                fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
+                                            <svg class="w-5 h-5" :viewBox="unit.viewbox" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path :d="unit.path" :fill="unit.color" />
                                             </svg>
                                             <div class="flex justify-start items-center space-x-2">
                                                 <span class="ml-3 truncate">{{ unit.name }}</span>
-                                                <span
-                                                    class="ml-3 text-xs font-bold opacity-40"
-                                                >{{ unit.currency }}</span>
+                                                <span class="ml-3 text-xs font-bold opacity-40">{{ unit.currency }}</span>
                                             </div>
                                         </div>
-
-                                        <ChevronRightIcon
-                                            v-if="active"
-                                            class="ml-3 h-4 w-4 flex-none text-bn-gray-600"
-                                            aria-hidden="true"
-                                        />
+                                        <ChevronRightIcon v-if="active" class="ml-3 h-4 w-4 flex-none text-bn-gray-600" aria-hidden="true"/>
                                     </div>
                                 </ComboboxOption>
                             </div>

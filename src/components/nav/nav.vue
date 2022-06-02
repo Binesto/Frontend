@@ -4,7 +4,7 @@
       <Logo :navstatus="navActs" />
       <button
         @click="navAc"
-        class="transition-all duration-200 z-10 absolute w-12 border-2 border-white/5 bg-bn-gray-900 hover:bg-bn-gray-800 text-bn-gray-400 hover:text-bn-gray-200 rounded-md py-2 flex items-center justify-center right-0 top-5 translate-x-6 cursor-pointer"
+        class="transition-all duration-200 z-10 absolute w-12 border-2 border-white/5 bg-bn-gray-900 hover:bg-bn-gray-800 text-bn-gray-400 hover:text-bn-gray-200 rounded-md py-2 flex items-center justify-center -right-2 top-10 translate-x-6 cursor-pointer"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -22,8 +22,11 @@
           />
         </svg>
       </button>
+      <div class="contain">
+        
+      </div>
       <perfect-scrollbar class="menu">
-        <div class="topMenu" :class="{'pt-16':navActs}">
+        <div class="topMenu" >
           <div class="other">
             <MenuItem @click="search" active>
               <svg
@@ -150,7 +153,7 @@
 
               <span :class="{ hidden: navActs }">Yardım</span>
             </MenuItem>
-            <MenuItem active="settings" v-tooltip:top.tooltip="'Ayarlar'">
+            <MenuItem active="settings">
               <svg
                 viewBox="0 0 17 17"
                 fill="none"
@@ -223,10 +226,10 @@ const navAc = () => {
     @apply w-[85px];
   }
   .content {
-    @apply h-full w-full space-y-7 flex flex-col items-start;
+    @apply h-full w-full space-y-2 flex flex-col items-start after:pointer-events-none after:w-full after:h-12 after:bg-gradient-to-b after:from-dark-100 after:content-[''] after:absolute after:top-24  before:z-10 before:pointer-events-none before:w-full before:h-12 before:bg-gradient-to-t before:from-dark-100 before:content-[''] before:absolute before:bottom-20;
 
     .menu {
-      @apply h-full w-full pr-8 pl-0.5 space-y-2 flex overflow-x-visible flex-col justify-between py-3;
+      @apply h-full w-full px-4 space-y-2 flex overflow-x-visible flex-col justify-between py-10 relative;
       .topMenu{
         @apply transition-all duration-200;
       }

@@ -1,5 +1,5 @@
 <template>
-    <div class="px-4 transition-all duration-200">
+    <div class="pl-7 pr-4 transition-all duration-200 z-10">
         <svg
             :height="logo.height"
             viewBox="0 0 402 128"

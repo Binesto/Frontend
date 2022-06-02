@@ -28,6 +28,11 @@ const router = createRouter({
       name: "settings",
       component: () => import("@/views/settings.vue"),
     },
+    {
+      path: "/debug",
+      name: "debug",
+      component: () => import("@/views/debug.vue"),
+    },
 
     // errors page
     {
