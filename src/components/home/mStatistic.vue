@@ -9,7 +9,7 @@
                 </div>
                 <span class="mstat__content__percentile rise">%2.17</span>
             </div>
-            <staticChart />
+            <!-- <staticChart /> -->
         </div>
         <div class="mdetail">
             <span class="mdetail__title">Detay</span>
@@ -26,10 +26,10 @@ import mDetail from './mDetail.vue'
 
 <style lang="scss" scoped>
 .main {
-    @apply w-full flex space-x-6;
+    @apply w-full flex flex-col sm:flex-row space-y-8 sm:space-y-0 sm:space-x-6;
     .mstat,
     .mdetail {
-        @apply bg-dark-100 border-2 border-bn-gray-800/20 w-1/2 rounded-3xl flex relative;
+        @apply bg-dark-100 border-2 border-bn-gray-800/20 w-full sm:w-1/2 rounded-3xl flex relative;
     }
     .mstat {
         @apply justify-between items-center overflow-hidden p-8;

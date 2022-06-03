@@ -70,6 +70,6 @@ import MenuItem from "./menuItem.vue";
 
 <style lang="scss" scoped>
 .nav {
-  @apply sm:hidden flex justify-around gap-6 p-4;
+  @apply z-40 bg-dark-100 w-full border-t border-dark-200 fixed bottom-0  sm:hidden flex justify-around gap-6 p-4;
 }
 </style>

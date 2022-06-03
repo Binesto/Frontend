@@ -3,6 +3,12 @@
 @tailwind base;
 * {
   @apply font-['Manrope',sans-serif];
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 body {
@@ -23,7 +29,6 @@ a {
 ::-webkit-scrollbar {
   width: 0px;
 }
-
 
 #nprogress .bar {
   background: rgb(181 59 254) !important;
@@ -56,12 +61,14 @@ a {
   @apply transition bg-primary/10 hover:bg-primary/20 text-primary px-4 py-2.5 text-xs font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-primary/30;
 }
 
-.ps__rail-x, .ps__rail-y{
+.ps__rail-x,
+.ps__rail-y {
   background-color: transparent !important;
 }
 
-.ps__thumb-y, .ps__thumb-x{
-  @apply relative rounded-xl flex border-y-8 border-transparent after:content-[''] after:absolute after:bg-white/10 after:hover:bg-white/30 after:w-full after:h-full after:rounded-xl;
+.ps__thumb-y,
+.ps__thumb-x {
+  @apply hidden relative rounded-xl sm:flex border-y-8 border-transparent after:content-[''] after:absolute after:bg-white/10 after:hover:bg-white/30 after:w-full after:h-full after:rounded-xl;
   background-color: transparent !important;
 }
 
