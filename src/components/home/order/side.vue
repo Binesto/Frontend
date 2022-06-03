@@ -1,5 +1,5 @@
 <template>
-  <div class="side">
+  <div class="side" :class="!active ? 'tabItem' : ''">
     <div class="side__title">{{ title }}</div>
     <table class="side__table">
       <thead class="side__table__head">
@@ -64,12 +64,16 @@
 defineProps({
   title: String,
   type: String,
+  active: Boolean,
 })
 </script>
 
 <style lang="scss" scoped>
 .side {
   @apply w-full h-96 overflow-auto;
+  &.tabItem{
+    @apply hidden sm:block
+  }
   &::-webkit-scrollbar {
     @apply w-1 h-1;
   }
@@ -80,7 +84,7 @@ defineProps({
     @apply bg-black/50;
   }
   &__title {
-    @apply text-xs font-bold pb-3 pt-6 px-8 text-bn-gray-300;
+    @apply hidden sm:block text-xs font-bold pb-3 pt-6 px-8 text-bn-gray-300;
   }
   &__table {
     @apply w-full flex flex-col;

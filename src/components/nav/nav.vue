@@ -4,7 +4,7 @@
       <Logo :navstatus="navActs" />
       <button
         @click="navAc"
-        class="transition-all duration-200 z-40 absolute w-12 border-2 border-white/5 bg-bn-gray-900 hover:bg-bn-gray-800 text-bn-gray-400 hover:text-bn-gray-200 rounded-md py-2 flex items-center justify-center -right-2 top-10 translate-x-6 cursor-pointer"
+        class="hidden 2xl:flex transition-all duration-200 z-40 absolute w-12 border-2 border-white/5 bg-bn-gray-900 hover:bg-bn-gray-800 text-bn-gray-400 hover:text-bn-gray-200 rounded-md py-2 items-center justify-center -right-2 top-10 translate-x-6 cursor-pointer"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -22,11 +22,9 @@
           />
         </svg>
       </button>
-      <div class="contain">
-        
-      </div>
+      <div class="contain"></div>
       <perfect-scrollbar class="menu">
-        <div class="topMenu" >
+        <div class="topMenu">
           <div class="other">
             <MenuItem @click="search" active>
               <svg
@@ -178,7 +176,6 @@
               <span :class="{ hidden: navActs }">Ayarlar</span>
             </MenuItem>
           </div>
-          
         </div>
       </perfect-scrollbar>
       <Account :navState="navActs" />
@@ -187,7 +184,7 @@
 </template>
 
 <script setup>
-import { ref, provide, watch } from "vue";
+import { ref, provide, onMounted } from "vue";
 import Logo from "./logo.vue";
 import MenuItem from "./menuItem.vue";
 import Account from "./account.vue";
@@ -217,6 +214,17 @@ const search = () => {
 const navAc = () => {
   navActs.value = !navActs.value;
 };
+
+
+const windowWidth = ref(null);
+
+onMounted(() => {
+  window.addEventListener("resize", () => {
+    windowWidth.value = window.innerWidth;
+    if (windowWidth.value < 1536) navActs.value = true;
+    else navActs.value = false;
+  });
+});
 </script>
 
 <style lang="scss" scoped>
@@ -230,7 +238,7 @@ const navAc = () => {
 
     .menu {
       @apply h-full w-full px-4 space-y-2 flex overflow-x-visible flex-col justify-between py-10 relative;
-      .topMenu{
+      .topMenu {
         @apply transition-all duration-200;
       }
       .menuInfo {

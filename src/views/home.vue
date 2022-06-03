@@ -3,10 +3,10 @@
     <div class="h-48">
       <heading />
     </div>
-    <div class="-mt-10 px-4 sm:px-16 flex max-w-[100rem] mx-auto">
+    <div class="-mt-10 px-2 sm:px-16 flex max-w-4xl xl:max-w-[100rem] mx-auto">
       <mainStatistic />
     </div>
-    <div class="w-full mt-8 space-y-8 sm:space-y-0 sm:space-x-8 flex flex-col sm:flex-row px-4 sm:px-16 pb-16 max-w-[100rem] mx-auto">
+    <div class="w-full mt-8 space-y-8 xl:space-y-0 xl:space-x-8 flex flex-col xl:flex-row px-2 sm:px-16 pb-16 max-w-4xl xl:max-w-[100rem] mx-auto">
       <div class="w-full space-y-8 max-h-content">
         <orderSide />
         <activtySide />

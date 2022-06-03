@@ -135,7 +135,7 @@ watch(activeType, (val) => {
 
 <style lang="scss" scoped>
 .main {
-  @apply w-full sm:w-1/4 flex-shrink-0 h-full p-8 space-y-2 bg-dark-100 rounded-3xl border-2 border-bn-gray-800/20;
+  @apply w-full xl:w-1/4 flex-shrink-0 h-full p-8 space-y-2 bg-dark-100 rounded-3xl border-2 border-bn-gray-800/20;
   &__title {
     @apply text-sm font-bold text-bn-gray-500 pb-2;
   }

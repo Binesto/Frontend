@@ -1,6 +1,6 @@
 <template>
     <!-- This example requires Tailwind CSS v2.0+ -->
-    <Menu as="div" class="z-10 w-full pl-1.5 pr-7 mx-3 relative !mt-1">
+    <Menu as="div" class="z-40 w-full pl-1.5 pr-7 mx-3 relative !mt-1">
         <div>
             <MenuButton class="account" :class="{'px-4':!props.navState}">
                 <div class="account-wrap">
