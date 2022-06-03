@@ -48,21 +48,21 @@
 .error {
     @apply h-full w-full flex flex-col items-center justify-center relative select-none;
     &__content {
-        @apply w-full h-full items-center flex justify-center z-10 space-x-16;
+        @apply px-4 sm:px-0 w-full h-full items-center flex justify-center z-10 space-x-16;
         &__info {
             @apply text-left max-w-md;
             &__title {
-                @apply text-left text-7xl font-extrabold text-primary;
+                @apply text-left text-6xl font-extrabold text-primary;
                 span {
-                    @apply text-white text-5xl ml-2;
+                    @apply text-white text-4xl ml-2;
                 }
             }
             &__text {
-                @apply text-sm text-bn-gray-500 font-medium mt-2;
+                @apply px-1 sm:text-sm text-bn-gray-500 font-medium mt-2;
             }
         }
         .satellite {
-            @apply w-96 h-96;
+            @apply w-96 h-96 hidden sm:block;
             animation: animatesatlite 3.5s infinite alternate ease-in-out;
         }
     }

@@ -28,7 +28,7 @@ import { ref } from 'vue';
 .application {
   @apply w-full h-screen flex flex-col sm:flex-row sm:py-8 sm:pr-8 max-w-[120rem] mx-auto max-h-[80rem] m-auto;
   .wrap {
-    @apply h-full w-full sm:rounded-xl bg-dark-200 overflow-hidden border-2 border-bn-gray-800/20;
+    @apply h-full w-full sm:rounded-xl pb-12 sm:pb-0 bg-dark-200 overflow-hidden border-2 border-bn-gray-800/20;
     div{
       @apply w-full h-full overflow-auto;
     }

@@ -2,7 +2,7 @@
   <div class="order">
     <div class="order__wrap">
       <orderSide title="Alış Emri" type="buy" />
-      <orderSide title="Satış Emri" type="sell" />
+      <!-- <orderSide title="Satış Emri" type="sell" /> -->
     </div>
   </div>
 </template>
