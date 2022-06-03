@@ -4,7 +4,7 @@
       <Logo :navstatus="navActs" />
       <button
         @click="navAc"
-        class="transition-all duration-200 z-10 absolute w-12 border-2 border-white/5 bg-bn-gray-900 hover:bg-bn-gray-800 text-bn-gray-400 hover:text-bn-gray-200 rounded-md py-2 flex items-center justify-center -right-2 top-10 translate-x-6 cursor-pointer"
+        class="transition-all duration-200 z-40 absolute w-12 border-2 border-white/5 bg-bn-gray-900 hover:bg-bn-gray-800 text-bn-gray-400 hover:text-bn-gray-200 rounded-md py-2 flex items-center justify-center -right-2 top-10 translate-x-6 cursor-pointer"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -221,7 +221,7 @@ const navAc = () => {
 
 <style lang="scss" scoped>
 .nav {
-  @apply transition-all duration-200 w-[285px] flex-shrink-0 pt-12 pb-6 relative;
+  @apply hidden sm:block transition-all duration-200 w-[285px] flex-shrink-0 pt-12 pb-6 relative;
   &.closed {
     @apply w-[85px];
   }

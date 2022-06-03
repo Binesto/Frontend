@@ -49,7 +49,7 @@ const routeCheck = () => {
 
 <style lang="scss">
 .item {
-  @apply flex text-gray-400 justify-between items-center transition-colors duration-100 w-full px-4 h-12 rounded-lg text-xs text-left capitalize hover:text-gray-300 active:text-gray-200 hover:bg-bn-gray-400/5 active:bg-bn-gray-400/10 select-none focus:outline-none focus:ring-2 focus:ring-bn-gray-800;
+  @apply flex text-gray-400 justify-between items-center transition-colors duration-100 sm:w-full px-4 h-12 rounded-lg text-xs text-left capitalize hover:text-gray-300 active:text-gray-200 hover:bg-bn-gray-400/5 active:bg-bn-gray-400/10 select-none focus:outline-none focus:ring-2 focus:ring-bn-gray-800;
   div {
     @apply flex space-x-4 items-center;
     svg {

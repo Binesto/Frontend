@@ -37,14 +37,15 @@ const router = createRouter({
     // errors page
     {
       path: "/:pathMatch(.*)*",
-      component: () =>  import("@/views/errors/404.vue"),
+      component: () => import("@/views/errors/404.vue"),
     },
-
   ],
 });
 
 router.beforeResolve((to, from, next) => {
+  if (to.name) {
     NProgress.start();
+  }
   next();
 });
 
