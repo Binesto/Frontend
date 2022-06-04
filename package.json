@@ -21,7 +21,7 @@
     "scss": "^0.2.4",
     "swiper": "^8.2.2",
     "vue": "^3.2.27",
-    "vue-router": "^4.0.12",
+    "vue-router": "^4.0.15",
     "vue3-apexcharts": "^1.4.1",
     "vue3-perfect-scrollbar": "^1.6.0"
   },
