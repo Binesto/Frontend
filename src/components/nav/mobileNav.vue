@@ -1,5 +1,5 @@
 <template>
-  <div class="nav">
+  <div v-if="windowWidth < 640" class="nav">
     <MenuItem active="home">
       <svg viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -65,7 +65,24 @@
 </template>
 
 <script setup>
+import { ref, provide, onMounted } from "vue";
 import MenuItem from "./menuItem.vue";
+const windowWidth = ref(window.innerWidth);
+
+const navActs = ref(false);
+
+const breakpoints = () => {
+  if (windowWidth.value > 1536) navActs.value = true;
+  else navActs.value = false;
+};
+
+onMounted(() => {
+  window.addEventListener("resize", () => {
+    windowWidth.value = window.innerWidth;
+    breakpoints();
+  });
+  breakpoints();
+});
 </script>
 
 <style lang="scss" scoped>

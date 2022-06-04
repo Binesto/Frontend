@@ -1,6 +1,6 @@
 <template>
   <perfect-scrollbar>
-    <div class="h-48">
+    <div class="h-64 sm:h-48">
       <heading />
     </div>
     <div class="-mt-10 px-2 sm:px-16 flex max-w-4xl xl:max-w-[100rem] mx-auto">

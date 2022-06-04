@@ -2,6 +2,7 @@
   <Search />
   <div class="application">
     <Nav />
+    <mobileTop />
     <div class="wrap">
       <div>
         <router-view></router-view>
@@ -18,6 +19,7 @@
 
 
 import Nav from '@/components/nav/nav.vue'
+import mobileTop from '@/components/nav/mobileTop.vue'
 import mobileNav from '@/components/nav/mobileNav.vue'
 import Search from '@/components/search.vue'
 import { ref } from 'vue';

@@ -36,7 +36,7 @@
 
 <style lang="scss" scoped>
 .heading {
-    @apply  w-full bg-[#37367B]/10 h-full items-center flex relative overflow-hidden;
+    @apply  w-full bg-[#37367B]/10 h-full items-end pb-16 flex relative overflow-hidden;
     &__wrap{
         @apply flex px-4 sm:px-16 space-x-3 items-center max-w-4xl xl:max-w-[100rem] mx-auto w-full;
     }

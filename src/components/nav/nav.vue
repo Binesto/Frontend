@@ -215,15 +215,19 @@ const navAc = () => {
   navActs.value = !navActs.value;
 };
 
-
 const windowWidth = ref(window.innerWidth);
+
+const breakpoints = () => {
+  if (windowWidth.value < 1536) navActs.value = true;
+  else navActs.value = false;
+};
 
 onMounted(() => {
   window.addEventListener("resize", () => {
     windowWidth.value = window.innerWidth;
-    if (windowWidth.value < 1536) navActs.value = true;
-    else navActs.value = false;
+    breakpoints();
   });
+  breakpoints();
 });
 </script>
 
