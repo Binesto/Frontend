@@ -29,7 +29,7 @@ import mDetail from './mDetail.vue'
     @apply w-full flex flex-col xl:flex-row space-y-8 xl:space-y-0 xl:space-x-6;
     .mstat,
     .mdetail {
-        @apply bg-dark-100 border-2 border-bn-gray-800/20 w-full xl:w-1/2 rounded-3xl flex relative;
+        @apply bg-dark-100 border-2 border-bn-gray-800/20 w-full xl:w-1/2 rounded-xl sm:rounded-3xl flex relative;
     }
     .mstat {
         @apply justify-between items-center overflow-hidden p-8;

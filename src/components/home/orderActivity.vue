@@ -161,7 +161,7 @@ setCurrent(0, 1);
 
 <style lang="scss" scoped>
 .order {
-  @apply w-full h-auto bg-dark-100 border-2 border-bn-gray-800/20 rounded-3xl overflow-hidden;
+  @apply w-full h-auto bg-dark-100 border-2 border-bn-gray-800/20 rounded-xl sm:rounded-3xl overflow-hidden;
   &__tab {
     @apply border-y border-bn-gray-800/20 px-2;
     &__nav {

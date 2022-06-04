@@ -72,7 +72,7 @@ defineProps({
 .side {
   @apply w-full h-96 overflow-auto;
   &.tabItem{
-    @apply hidden sm:block
+    @apply hidden xl:block
   }
   &::-webkit-scrollbar {
     @apply w-1 h-1;
@@ -84,7 +84,7 @@ defineProps({
     @apply bg-black/50;
   }
   &__title {
-    @apply hidden sm:block text-xs font-bold pb-3 pt-6 px-8 text-bn-gray-300;
+    @apply hidden xl:block text-xs font-bold pb-3 pt-6 px-8 text-bn-gray-300;
   }
   &__table {
     @apply w-full flex flex-col;

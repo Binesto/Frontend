@@ -13,7 +13,7 @@
             1408: {
               slidesPerView: 3,
             },
-            1640: {
+            1750: {
               slidesPerView: 4,
             },
           }"

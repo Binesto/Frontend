@@ -2,7 +2,7 @@
 @import "./components/tooltip.scss";
 @tailwind base;
 * {
-  @apply font-['Manrope',sans-serif];
+  @apply font-['Manrope',sans-serif] select-none;
 }
 
 button,

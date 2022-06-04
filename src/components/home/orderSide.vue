@@ -1,9 +1,11 @@
 <template>
   <div class="order">
-    <div class="order__nav">
+    <div class="order__nav" :class="active">
       <button @click="active = 'buy'">Alış Emri</button>
       <button @click="active = 'sell'">Satış Emri</button>
-      <span class="order__nav__indicator"></span>
+      <span class="order__nav__indicator">
+        <span></span>
+      </span>
     </div>
     <div class="order__wrap">
       <orderSide title="Alış Emri" type="buy" :active="'buy' == active"/>
@@ -33,14 +35,17 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .order {
-  @apply w-full h-auto bg-dark-100 border-2 border-bn-gray-800/20 rounded-3xl overflow-hidden;
+  @apply w-full h-auto bg-dark-100 border-2 border-bn-gray-800/20 rounded-xl sm:rounded-3xl overflow-hidden;
   &__nav{
-    @apply sm:hidden space-x-2 relative flex justify-center w-full p-4;
+    @apply xl:hidden relative flex justify-center w-full;
     &__indicator{
-      @apply bg-bn-gray-500/20 left-0 rounded-xl absolute inset-y-0 my-2.5 w-1/2 pointer-events-none;
+      @apply left-0 rounded-xl absolute inset-y-0 my-0 w-1/2 pointer-events-none;
+      span{
+        @apply relative h-full w-full inset-0 inline-block after:absolute after:content-[''] after:inset-2.5 after:rounded-xl after:bg-gray-500/10
+      }
     }
     button{
-      @apply w-1/2 text-xs rounded-xl py-2.5 font-medium z-10
+      @apply w-1/2 text-xs rounded-xl py-6 font-medium z-10
     }
   }
   &__wrap {

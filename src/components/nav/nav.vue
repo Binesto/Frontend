@@ -1,5 +1,5 @@
 <template>
-  <div class="nav" :class="{ closed: navActs }">
+  <div v-if="windowWidth > 640" class="nav" :class="{ closed: navActs }">
     <div class="content">
       <Logo :navstatus="navActs" />
       <button
@@ -216,7 +216,7 @@ const navAc = () => {
 };
 
 
-const windowWidth = ref(null);
+const windowWidth = ref(window.innerWidth);
 
 onMounted(() => {
   window.addEventListener("resize", () => {
@@ -229,7 +229,7 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .nav {
-  @apply hidden sm:block transition-all duration-200 w-[285px] flex-shrink-0 pt-12 pb-6 relative;
+  @apply transition-all duration-200 w-[285px] flex-shrink-0 pt-12 pb-6 relative;
   &.closed {
     @apply w-[85px];
   }
