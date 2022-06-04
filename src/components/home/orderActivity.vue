@@ -3,7 +3,7 @@
     <div class="order__tab">
       <nav class="order__tab__nav" aria-label="Tabs">
         <a
-          @click="setCurrent(index, tab.id)"
+          @click="setCurrent(tab.id)"
           v-for="(tab, index) in tabs"
           :key="index"
           class="order__tab__nav__item"
@@ -25,6 +25,36 @@
           ></div>
         </div>
       </nav>
+      <div class="order__tab__selectwrap">
+        <select
+          id="tabs"
+          name="tabs"
+          class="order__tab__selectwrap__select"
+          v-model="selectTab"
+        >
+          <option v-for="tab in tabs" :key="tab.id" :value="tab.id">
+            {{ tab.name }}
+          </option>
+        </select>
+        <span
+          class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
+        >
+          <!-- Heroicon name: solid/selector -->
+          <svg
+            class="h-5 w-5 text-gray-400"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </span>
+      </div>
     </div>
     <div class="order__content">
       <TransitionRoot
@@ -110,6 +140,26 @@
                 <span class="table__body__wrap__content__unit">₺</span>
               </td>
             </tr>
+            <tr class="table__body__wrap">
+              <td class="table__body__wrap__content">
+                <span class="table__body__wrap__content__status" status="rise">
+                  Alış
+                </span>
+              </td>
+              <td class="table__body__wrap__content">00:42:42</td>
+              <td class="table__body__wrap__content">
+                11,795.70
+                <span class="table__body__wrap__content__unit">₺</span>
+              </td>
+              <td class="table__body__wrap__content">
+                11,795.70
+                <span class="table__body__wrap__content__unit">BTC</span>
+              </td>
+              <td class="table__body__wrap__content">
+                11,795.70
+                <span class="table__body__wrap__content__unit">₺</span>
+              </td>
+            </tr>
           </tbody>
         </table>
       </TransitionRoot>
@@ -118,7 +168,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import { TransitionRoot } from "@headlessui/vue";
 
 const tabs = ref([
@@ -142,30 +192,43 @@ const tabs = ref([
   },
 ]);
 
+const selectTab = ref(1);
+
 const isEmpty = ref(false);
 const currentData = ref([]);
 
-const setCurrent = (index, id) => {
-  tabs.value.forEach((tab, i) => {
-    if (i === index) {
-      currentData.value = tab;
-      currentData.value.id = id;
-      tab.current = true;
-      if (tab.data.length > 0) isEmpty.value = false;
-      else isEmpty.value = true;
-    } else tab.current = false;
-  });
+const setCurrent = (id) => {
+  var selectedTab = tabs.value.find((tab) => tab.id == id);
+  if (selectedTab) {
+    currentData.value = selectedTab;
+    currentData.value.id = id;
+    selectedTab.current = true;
+    if (selectedTab.data.length > 0) isEmpty.value = false;
+    else isEmpty.value = true;
+  } else {
+    selectedTab.current = false;
+  }
 };
-setCurrent(0, 1);
+setCurrent(1);
+
+watch(
+  () => selectTab.value,
+  () => {
+    setCurrent(selectTab.value);
+  }
+);
 </script>
 
 <style lang="scss" scoped>
+.secont-data {
+  @apply hidden;
+}
 .order {
   @apply w-full h-auto bg-dark-100 border-2 border-bn-gray-800/20 rounded-xl sm:rounded-3xl overflow-hidden;
   &__tab {
     @apply border-y border-bn-gray-800/20 px-2;
     &__nav {
-      @apply -mb-px flex px-4 py-2.5 space-x-2 max-w-max relative;
+      @apply hidden xl:flex -mb-px px-4 py-2.5 space-x-2 max-w-max relative;
       &__item {
         @apply w-44 text-center select-none rounded-xl transition-all duration-200 border-b-0 border-transparent hover:bg-bn-gray-700/5 px-8 py-3 cursor-pointer text-white/50 whitespace-nowrap font-medium text-xs;
       }
@@ -179,13 +242,23 @@ setCurrent(0, 1);
         }
       }
     }
+    &__selectwrap {
+      @apply xl:hidden h-full w-full relative;
+      &__select {
+        @apply bg-transparent border-bn-gray-900 mt-1 block w-full pl-3 pr-10 py-4 text-xs focus:outline-none text-bn-gray-300 focus:text-white sm:text-sm rounded-md;
+        -webkit-appearance: none;
+        option {
+          @apply bg-bn-gray-900 py-2 border-none border-0;
+        }
+      }
+    }
   }
   &__content {
     @apply w-full h-72 flex relative;
     &__empty {
       @apply w-full h-full flex justify-center select-none absolute inset-0;
       &__alert {
-        @apply text-center mt-12 w-full flex items-center flex-col;
+        @apply text-center mt-12 w-full flex items-center flex-col px-2;
         img {
           @apply -mt-6 select-none;
         }
@@ -204,7 +277,13 @@ setCurrent(0, 1);
         &__wrap {
           @apply flex bg-[#141414] overflow-hidden;
           th {
-            @apply flex w-full py-2.5 pl-4 pr-3 text-left text-xs font-semibold text-bn-gray-500 sm:pl-6 lg:pl-8;
+            @apply flex w-full truncate py-2.5 pl-4 pr-3 text-left text-xs font-semibold text-bn-gray-500 sm:pl-6 lg:pl-8;
+          }
+          th:nth-child(2) {
+            @apply hidden xl:block;
+          }
+          th:last-child {
+            @apply hidden xl:block;
           }
         }
       }
@@ -226,6 +305,12 @@ setCurrent(0, 1);
                 @apply bg-bn-green/5 text-bn-green;
               }
             }
+          }
+          &__content:nth-child(2) {
+            @apply hidden xl:block;
+          }
+          &__content:last-child {
+            @apply hidden xl:block;
           }
         }
       }
